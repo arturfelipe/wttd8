@@ -12,15 +12,11 @@ MANAGERS = ADMINS
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECT_DIR.child('database.db'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///' + PROJECT_DIR.child('database.db'))
 }
 
 # Local time zone for this installation. Choices can be found here:
