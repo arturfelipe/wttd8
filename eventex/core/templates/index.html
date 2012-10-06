@@ -1,47 +1,15 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="eventEX" />
-  <meta http-equiv='content-Language' content='en-US' />
-  <title>eventEX</title>
-  <link href="http://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
-  <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css">
-  <link type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico" rel="shortcut icon" />
-</head>
-<body>
-  <div id="ex-page">
-    <header class="main">
-      <div id="ex-logo">
-        event<span id="ex-logo-e">E</span><span id="ex-logo-x">X</span>
-      </div>
-    </header>
-    <div id="ex-content">
-      <div id="ex-date">
-        <div class="ex-date-month">SET</div>
-        <div class="ex-date-day">30</div>
-      </div>
-      <h1 class="greetings">Bem-vindo ao eventEX!</h1>
-      <p>O evento mais sensacional do ano depois do Dev in Rio!</p>
-      <p>Você não pode perder esta oportunidade!</p>
-      <p><strong>Abertura das inscrições em 30/09/2012.</strong></p>
-      <p>Para dúvidas e mais informações entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
-    </div>
-    <footer>
-      <nav id="social-links">
-        <ul>
-          <li><a class="lnk-facebook" href="http://www.facebook.com/ArturFelipe" title="Facebook" rel="external" target="_blank">Facebook</a></li>
-          <li><a class="lnk-twitter" href="https://twitter.com/arturfsousa" title="Twitter" rel="external" target="_blank">Twitter</a></li>
-          <li><a class="lnk-email" href="mailto: arturfelipe.sousa@gmail.com" title="Email" rel="external" target="_blank">Email</a></li>
-          <li><a class="lnk-gplus" href="https://plus.google.com/u/0/112693544441542242564/posts" title="Google+" rel="external" target="_blank">Google+</a></li>
-        </ul>
-      </nav>
-      <div id="ex-rights">
-        &copy; 2012 <a rel="license" href="">eventEX</a>, some rights reserved.
-      </div>
-    </footer>
-  </div>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/leadingpage.js"></script>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div id="ex-date">
+  <div class="ex-date-month">SET</div>
+  <div class="ex-date-day">30</div>
+</div>
+<h1 class="greetings">Bem-vindo ao eventEX!</h1>
+<p>O evento mais sensacional do ano depois do Dev in Rio!</p>
+<p>Você não pode perder esta oportunidade!</p>
+<p><strong><a href="/inscricao/">Inscreva-se já!</a></strong></p>
+<p>
+  Para dúvidas e mais informações entre em contato com
+  <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a>
+</p>
+{% endblock content %}
