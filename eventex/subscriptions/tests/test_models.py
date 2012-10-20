@@ -7,10 +7,10 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
-            name='Henrique Bastos',
+            name='Artur Sousa',
             cpf='12345678901',
-            email='henrique@bastos.net',
-            phone='21-96186180'
+            email='artur@sousa.net',
+            phone='21-95555595'
         )
 
     def test_create(self):
@@ -23,23 +23,23 @@ class SubscriptionTest(TestCase):
         self.obj.save()
         self.assertIsInstance(self.obj.created_at, datetime)
 
-    def test_unique(self):
-        self.assertEqual(u'Henrique Bastos', unicode(self.obj))
+    def test_unicode(self):
+        self.assertEqual(u'Artur Sousa', unicode(self.obj))
 
 class SubscriptionUniqueTest(TestCase):
     def setUp(self):
         # Create a first entry to force the colision
-        Subscription.objects.create(name='Henrique Bastos', cpf='12345678901',
-                                    email='henrique@bastos.net', phone='21-96186180')
+        Subscription.objects.create(name='Artur Sousa', cpf='12345678901',
+                                    email='artur@sousa.net', phone='21-95555595')
 
     def test_cpf_unique(self):
         'CPF must be unique'
-        s = Subscription(name='Henrique Bastos', cpf='12345678901',
-                         email='outro@email.com', phone='21-96186180')
+        s = Subscription(name='Artur Sousa', cpf='12345678901',
+                         email='outro@email.com', phone='21-95555595')
         self.assertRaises(IntegrityError, s.save)
 
     def test_email_unique(self):
         'Email must be unique'
-        s = Subscription(name='Henrique Bastos', cpf='09876543210',
-                        email='henrique@bastos.net', phone='21-96186180')
+        s = Subscription(name='Artur Sousa', cpf='09876543210',
+                        email='artur@sousa.net', phone='21-95555595')
         self.assertRaises(IntegrityError, s.save)
