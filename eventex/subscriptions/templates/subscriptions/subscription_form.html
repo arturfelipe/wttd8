@@ -3,9 +3,11 @@
 <h1>Formulário de inscrição</h1>
 <form action="." method="POST">
   {% csrf_token %}
+  {% if form.non_field_errors %}
   <div class="form-errors">
     {{ form.non_field_errors }}
   </div>
+  {% endif %}
   <div class="form-field-wrapper">
     <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
     {{ form.name }}
