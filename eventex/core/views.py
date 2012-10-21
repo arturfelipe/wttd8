@@ -9,5 +9,7 @@ def homepage(request):
 def speaker_detail(request, slug):
     speaker = get_object_or_404(Speaker, slug=slug)
     context = {'speaker': speaker}
-    return direct_to_template(request, 'core/speaker_detail.html',
-                              context)
+    return direct_to_template(request, 'core/speaker_detail.html', context)
+
+def talk_list(request):
+    return direct_to_template(request, 'core/talk_list.html')
