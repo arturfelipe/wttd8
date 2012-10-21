@@ -30,3 +30,12 @@ class Contact(models.Model):
 
     def __unicode__(self):
         return self.value
+
+class Talk(models.Model):
+    title = models.CharField(_(u'Título'), max_length=255)
+    description = models.TextField(_(u'Descrição'))
+    start_time = models.TimeField(_(u'Hora início'), blank=True)
+    speakers = models.ManyToManyField('Speaker', verbose_name=_(u'Palestrantes'))
+
+    def __unicode__(self):
+        return self.title
