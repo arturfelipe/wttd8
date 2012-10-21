@@ -19,3 +19,15 @@ class SubscriptionForm(forms.ModelForm):
         super(SubscriptionForm, self).__init__(*args, **kwargs)
 
         self.fields['cpf'].validators.append(CPFValidator)
+
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        capitalize_word = map(lambda w: w.capitalize(), name.split())
+        return ' '.join(capitalize_word)
+
+    def clean(self):
+        super(SubscriptionForm, self).clean()
+        if not self.cleaned_data.get('email') and not self.cleaned_data.get('phone'):
+            raise ValidationError(_(u'Informe seu email ou telefone.'))
+        return self.cleaned_data
+

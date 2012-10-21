@@ -23,6 +23,16 @@ class SubscriptionFormTest(TestCase):
         form = self.make_validated_form(email='')
         self.assertFalse(form.errors)
 
+    def test_name_must_be_capitialize(self):
+        'Name must be capitialize.'
+        form = self.make_validated_form(name='ARTUR sousa')
+        self.assertEquals('Artur Sousa', form.cleaned_data['name'])
+
+    def test_must_inform_email_or_phone(self):
+        'Email and phone are optional, but one must be informed.'
+        form = self.make_validated_form(email='', phone='')
+        self.assertItemsEqual(['__all__'], form.errors)
+
     def make_validated_form(self, **kwargs):
         data = dict(name='Artur Sousa', cpf='12345678901',
                     email='artur@sousa.net', phone='21-9555595')
