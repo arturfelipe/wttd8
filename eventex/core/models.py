@@ -10,3 +10,17 @@ class Speaker(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class Contact(models.Model):
+    KINDS = (
+        ('E', _('E-mail')),
+        ('P', _('Telefone')),
+        ('F', _('Fax')),
+    )
+
+    speaker = models.ForeignKey('Speaker', verbose_name=_('Palestrante'))
+    kind = models.CharField(_('Tipo'), max_length=1, choices=KINDS)
+    value = models.CharField(_('Valor'), max_length=255)
+
+    def __unicode__(self):
+        return self.value
