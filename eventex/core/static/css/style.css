@@ -175,18 +175,19 @@ a:hover {
 
 form label {
   display: block;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
 form input {
   width: 300px;
-  padding: 3px 5px;
+  padding: 7px 8px;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   font-size: 14px;
   border: 1px solid #ccc;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-right: 7px;
 }
 
 button {
@@ -227,4 +228,12 @@ button:hover {
   list-style: none;
   font-size: 12px;
   color: #cc0000;
+}
+
+#id_phone_0 {
+  width: 30px;
+}
+
+#id_phone_1 {
+  width: 246px;
 }
