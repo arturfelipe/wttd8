@@ -3,27 +3,29 @@
 <h1>Formulário de inscrição</h1>
 <form action="." method="POST">
   {% csrf_token %}
-  {{ form.non_field_errors }}
-  <p>
-    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+  <div class="form-errors">
+    {{ form.non_field_errors }}
+  </div>
+  <div class="form-field-wrapper">
+    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
     {{ form.name }}
     {{ form.name.errors }}
-  </p>
-  <p>
-    <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
+  </div>
+  <div class="form-field-wrapper">
+    <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
     {{ form.cpf }}
     {{ form.cpf.errors }}
-  </p>
-  <p>
-    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+  </div>
+  <div class="form-field-wrapper">
+    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
     {{ form.email }}
     {{ form.email.errors }}
-  </p>
-  <p>
-    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}:</label>
+  </div>
+  <div class="form-field-wrapper">
+    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
     {{ form.phone }}
     {{ form.phone.errors }}
-  </p>
-  <button type="submit">Enviar!</button>
+  </div>
+  <button type="submit">Enviar</button>
 </form>
 {% endblock content %}
