@@ -256,3 +256,8 @@ button:hover {
 #id_phone_1 {
   width: 246px;
 }
+
+.talk-media {
+  text-align: center;
+  margin-top: 40px;
+}
