@@ -6,6 +6,10 @@ from eventex.core.models import Speaker, Talk
 def homepage(request):
     return direct_to_template(request, 'index.html')
 
+def speaker_list(request):
+    context = {'speakers': Speaker.objects.all()}
+    return direct_to_template(request, 'core/speaker_list.html', context)
+
 def speaker_detail(request, slug):
     speaker = get_object_or_404(Speaker, slug=slug)
     context = {'speaker': speaker}

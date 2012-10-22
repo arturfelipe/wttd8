@@ -10,11 +10,29 @@ body {
   font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
 }
 
+a,
+a:link,
+a:active,
+a:visited {
+  color: #165BB1;
+  text-decoration: none;
+  border-bottom: 1px dotted #092548;
+}
+
+a:hover {
+  border-bottom: 1px solid #092548;
+}
+
 #ex-logo {
+  height: 50px;
+  float: left;
+}
+
+#ex-logo > a {
   font-family: 'Audiowide', cursive;
   font-size: 48px;
   color: #f0f0f0;
-  height: 50px;
+  border-bottom: none;
 }
 
 #ex-logo-e {
@@ -46,9 +64,31 @@ body {
 }
 
 header.main {
+  height: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-left: 10px;
+}
+
+#nav-top {
+  float: right;
+  margin-top: 20px;
+}
+#nav-top > a,
+#nav-top > a:link,
+#nav-top > a:active,
+#nav-top > a:visited  {
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+#nav-top > a:hover  {
+  background-color: #165bb1;
+  color: #ffe816;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 #ex-content {
@@ -160,19 +200,6 @@ h1 {
   height: 32px;
 }
 
-a,
-a:link,
-a:active,
-a:visited {
-  color: #165BB1;
-  text-decoration: none;
-  border-bottom: 1px dotted #092548;
-}
-
-a:hover {
-  border-bottom: 1px solid #092548;
-}
-
 form label {
   display: block;
   margin-bottom: 4px;
@@ -260,4 +287,29 @@ button:hover {
 .talk-media {
   text-align: center;
   margin-top: 40px;
+}
+
+.palestra h2 {
+  margin: 10px 0 5px 0;
+}
+
+/*.palestra h2 a,
+.palestra h2 a:link,
+.palestra h2 a:visited,
+.palestra h2 a:visited {
+  border-bottom: none;
+}
+.palestra h2 a:hover {
+  text-decoration: none;
+}*/
+
+a.speaker-url,
+a.speaker-url:link,
+a.speaker-url:visited,
+a.speaker-url:visited {
+  color: #666;
+  border-bottom: none;
+}
+a.speaker-url:hover {
+  border-bottom: none;
 }

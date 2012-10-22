@@ -10,6 +10,7 @@ class Speaker(models.Model):
     description = models.TextField(_(u'Descrição'), blank=True)
 
     class Meta:
+        ordering = ['name']
         verbose_name = _('Palestrante')
         verbose_name_plural = _('Palestrantes')
 

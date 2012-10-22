@@ -13,8 +13,14 @@
   <div id="ex-page">
     <header class="main">
       <div id="ex-logo">
-        event<span id="ex-logo-e">E</span><span id="ex-logo-x">X</span>
+        <a href="{% url core:homepage %}">event<span id="ex-logo-e">E</span><span id="ex-logo-x">X</span></a>
       </div>
+      <nav id="nav-top">
+        <a href="{% url core:homepage %}">Home</a>
+        <a href="{% url subscriptions:subscribe %}">Inscrição</a>
+        <a href="{% url core:talk_list %}">Agenda</a>
+        <a href="{% url core:speaker_list %}">Palestrantes</a>
+      </nav>
     </header>
     <div id="ex-content">
       {% block content %}

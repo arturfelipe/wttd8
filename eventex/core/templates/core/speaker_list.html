@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% for speaker in speakers %}
+    <div>
+      <a href="{{ speaker.get_absolute_url }}">{{ speaker.name }}</a>
+    </div>
+  {% endfor %}
+{% endblock %}

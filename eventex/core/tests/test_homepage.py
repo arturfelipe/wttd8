@@ -13,3 +13,10 @@ class HomepageTest(TestCase):
     def test_template(self):
         'Homepage must use template index.html.'
         self.assertTemplateUsed(self.resp, 'index.html')
+
+    def test_html(self):
+        'HTML must have main menu.'
+        self.assertContains(self.resp, 'Home</a>')
+        self.assertContains(self.resp, 'Inscrição</a>')
+        self.assertContains(self.resp, 'Agenda</a>')
+        self.assertContains(self.resp, 'Palestrantes</a>')
