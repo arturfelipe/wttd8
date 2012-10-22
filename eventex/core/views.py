@@ -1,5 +1,4 @@
 # coding: utf-8
-from datetime import time
 from django.views.generic.simple import direct_to_template
 from django.shortcuts import get_object_or_404
 from eventex.core.models import Speaker, Talk
@@ -13,12 +12,8 @@ def speaker_detail(request, slug):
     return direct_to_template(request, 'core/speaker_detail.html', context)
 
 def talk_list(request):
-    return talk_list(request)
-
-def talk_list(request):
-    midday = time(12)
     context = {
-        'morning_talks': Talk.objects.filter(start_time__lt=midday),
-        'afternoon_talks': Talk.objects.filter(start_time__gte=midday),
+        'morning_talks': Talk.objects.at_morning(),
+        'afternoon_talks': Talk.objects.at_afternoon(),
     }
     return direct_to_template(request, 'core/talk_list.html', context)
