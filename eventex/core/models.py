@@ -60,3 +60,13 @@ class Talk(models.Model):
 
     def get_absolute_url(self):
         return '/palestras/%d/' % self.pk
+
+class Course(Talk):
+    slots = models.IntegerField(_('Slots'))
+    notes = models.TextField(_('Notas'))
+
+    objects = PeriodManager()
+
+    class Meta:
+        verbose_name = _('Curso')
+        verbose_name_plural = _('Cursos')
