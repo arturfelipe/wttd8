@@ -293,16 +293,6 @@ button:hover {
   margin: 10px 0 5px 0;
 }
 
-/*.palestra h2 a,
-.palestra h2 a:link,
-.palestra h2 a:visited,
-.palestra h2 a:visited {
-  border-bottom: none;
-}
-.palestra h2 a:hover {
-  text-decoration: none;
-}*/
-
 a.speaker-url,
 a.speaker-url:link,
 a.speaker-url:visited,
@@ -312,4 +302,32 @@ a.speaker-url:visited {
 }
 a.speaker-url:hover {
   border-bottom: none;
+}
+
+#speakers-list {
+  overflow: auto;
+  margin-top: 20px;
+}
+
+#speakers-list .speaker {
+  height: 110px;
+}
+#speakers-list .speaker img {
+  float: left;
+  margin-right: 20px;
+  border: 4px solid #ccc;
+}
+#speakers-list .speaker .detail {
+  float: left;
+  margin-top: 5px;
+  width: 650px;
+}
+#speakers-list .speaker .detail h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+#speakers-list .speaker .detail .description {
+  float: left;
+  margin-top: 7px;
+  font-size: 12px;
 }

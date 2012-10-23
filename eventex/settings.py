@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'south',
+    'gravatar',
     'eventex.core',
     'eventex.subscriptions',
 )

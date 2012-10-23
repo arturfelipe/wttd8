@@ -9,6 +9,11 @@ class Speaker(models.Model):
     url = models.URLField(_('Url'))
     description = models.TextField(_(u'Descrição'), blank=True)
 
+    @property
+    def email_contact(self):
+        qs = self.contact_set.filter(kind='E')
+        return qs[0].value if qs else None
+
     class Meta:
         ordering = ['name']
         verbose_name = _('Palestrante')
