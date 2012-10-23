@@ -10,11 +10,29 @@ body {
   font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
 }
 
+a,
+a:link,
+a:active,
+a:visited {
+  color: #165BB1;
+  text-decoration: none;
+  border-bottom: 1px dotted #092548;
+}
+
+a:hover {
+  border-bottom: 1px solid #092548;
+}
+
 #ex-logo {
+  height: 50px;
+  float: left;
+}
+
+#ex-logo > a {
   font-family: 'Audiowide', cursive;
   font-size: 48px;
   color: #f0f0f0;
-  height: 50px;
+  border-bottom: none;
 }
 
 #ex-logo-e {
@@ -46,9 +64,31 @@ body {
 }
 
 header.main {
+  height: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-left: 10px;
+}
+
+#nav-top {
+  float: right;
+  margin-top: 20px;
+}
+#nav-top > a,
+#nav-top > a:link,
+#nav-top > a:active,
+#nav-top > a:visited  {
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+#nav-top > a:hover  {
+  background-color: #165bb1;
+  color: #ffe816;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 #ex-content {
@@ -160,19 +200,138 @@ h1 {
   height: 32px;
 }
 
-a,
-a:link,
-a:active,
-a:visited {
-  color: #165BB1;
-  text-decoration: none;
-  border-bottom: 1px dotted #092548;
-}
-
-a:hover {
-  border-bottom: 1px solid #092548;
-}
-
 form label {
   display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+form input {
+  width: 300px;
+  padding: 7px 8px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 7px;
+  -webkit-box-shadow: inset #ddd 0px 2px 6px;
+  -moz-box-shadow: inset #ddd 0px 2px 6px;
+  box-shadow: inset #ddd 0px 2px 6px;
+}
+
+button {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  min-width: 150px;
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+  border: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 5px rgba(0, 0, 0, .25);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 5px rgba(0, 0, 0, .25);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  background-color: #165bb1;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1c72de), to(#165bb1));
+  background-image: -webkit-linear-gradient(top, #1c72de, #165bb1);
+  background-image: -o-linear-gradient(top, #1c72de, #165bb1);
+  background-image: linear-gradient(to bottom, #1c72de, #165bb1);
+  background-image: -moz-linear-gradient(top, #1c72de, #165bb1);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: none;
+  color: #aecef7;
+  background-color: #0f3d77;
+  *background-color: #003bb3;
+}
+
+.form-field-wrapper {
+  margin-bottom: 15px;
+}
+
+.form-errors {
+  padding: 10px 10px;
+  background-color: #ffdede;
+  margin: 15px 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.errorlist {
+  list-style: none;
+  font-size: 12px;
+  color: #cc0000;
+  padding: 0;
+  margin: 0;
+}
+
+#id_phone_0 {
+  width: 30px;
+}
+
+#id_phone_1 {
+  width: 246px;
+}
+
+.talk-media {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.palestra h2 {
+  margin: 10px 0 5px 0;
+}
+
+.palestra {
+  margin-bottom: 30px;
+}
+
+a.speaker-url,
+a.speaker-url:link,
+a.speaker-url:visited,
+a.speaker-url:visited {
+  color: #666;
+  border-bottom: none;
+}
+a.speaker-url:hover {
+  border-bottom: none;
+}
+
+#speakers-list {
+  overflow: auto;
+  margin-top: 20px;
+}
+
+#speakers-list .speaker {
+  height: 110px;
+}
+#speakers-list .speaker img {
+  float: left;
+  margin-right: 20px;
+  border: 4px solid #ccc;
+}
+#speakers-list .speaker .detail {
+  float: left;
+  margin-top: 5px;
+  width: 650px;
+}
+#speakers-list .speaker .detail h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+#speakers-list .speaker .detail .description {
+  float: left;
+  margin-top: 7px;
+  font-size: 12px;
 }
