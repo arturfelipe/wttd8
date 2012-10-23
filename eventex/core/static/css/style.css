@@ -293,6 +293,10 @@ button:hover {
   margin: 10px 0 5px 0;
 }
 
+.palestra {
+  margin-bottom: 30px;
+}
+
 a.speaker-url,
 a.speaker-url:link,
 a.speaker-url:visited,
