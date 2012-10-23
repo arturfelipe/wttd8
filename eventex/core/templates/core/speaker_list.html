@@ -4,7 +4,7 @@
   <div id="speakers-list">
     {% for speaker in speakers %}
       <div class="speaker">
-        {% gravatar_img_for_email speaker.email_contact %}
+        {% gravatar_img_for_email speaker.email_gravatar %}
         <div class="detail">
           <h2><a href="{{ speaker.get_absolute_url }}">{{ speaker.name }}</a></h2>
           <div class="description">

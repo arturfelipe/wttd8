@@ -10,9 +10,9 @@ class Speaker(models.Model):
     description = models.TextField(_(u'Descrição'), blank=True)
 
     @property
-    def email_contact(self):
+    def email_gravatar(self):
         qs = self.contact_set.filter(kind='E')
-        return qs[0].value if qs else None
+        return qs[0].value if qs else ''
 
     class Meta:
         ordering = ['name']
